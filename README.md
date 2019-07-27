@@ -1,8 +1,9 @@
-[![Build Status](https://travis-ci.org/tiangolo/docker-with-compose.svg?branch=master)](https://travis-ci.org/tiangolo/docker-with-compose)
+# Docker With Compose (+ Git-crypt)
+This is a modified version of `tiangolo/docker-with-compose**, the main
+modification is the addition of git-crypt. This is intended for use with gitlab.
 
-## Supported tags and respective `Dockerfile` links
-
-* [`latest` _(Dockerfile)_](https://github.com/tiangolo/docker-with-compose/blob/master/Dockerfile)
+**GitHub repo**: <https://github.com/jseam2/docker-with-compose>
+**Docker Hub image**: <https://hub.docker.com/r/jseam/docker-with-compose/>
 
 # Docker with Docker Compose image
 
@@ -28,11 +29,11 @@ docker pull tiangolo/docker-with-compose
 
 ## Problem description
 
-There is an official [Docker image](https://hub.docker.com/_/docker/) that contains the `docker` binary. And there is a [Docker Compose image](https://hub.docker.com/r/docker/compose/). 
+There is an official [Docker image](https://hub.docker.com/_/docker/) that contains the `docker` binary. And there is a [Docker Compose image](https://hub.docker.com/r/docker/compose/).
 
-But the Docker Compose image has `docker-compose` as the entrypoint. 
+But the Docker Compose image has `docker-compose` as the entrypoint.
 
-So, it's not possible to run other commands on that image, like installing something, e.g. `apt-get install -y curl`. 
+So, it's not possible to run other commands on that image, like installing something, e.g. `apt-get install -y curl`.
 
 And it's also not possible to run `docker` commands directly, e.g. `docker login -u ci-user -p $CI_JOB_TOKEN $CI_REGISTRY`.
 
@@ -73,7 +74,7 @@ But when the base image has to download and install Docker Compose every time, t
 
 ## This image's solution
 
-This image includes Docker Compose and allows you to run any other arbitrary command. 
+This image includes Docker Compose and allows you to run any other arbitrary command.
 
 So your GitLab CI `.gitlab-ci.yml` file could then look like:
 
