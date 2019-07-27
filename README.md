@@ -3,6 +3,7 @@ This is a modified version of `tiangolo/docker-with-compose**, the main
 modification is the addition of git-crypt. This is intended for use with gitlab.
 
 **GitHub repo**: <https://github.com/jseam2/docker-with-compose>
+
 **Docker Hub image**: <https://hub.docker.com/r/jseam/docker-with-compose/>
 
 # Docker with Docker Compose image
